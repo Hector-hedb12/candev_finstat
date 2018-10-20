@@ -30,6 +30,7 @@ If you are using Ubuntu/Debian, follow these instructions to get a working envir
 3. Set up the environment variables file (.env) in the root directory. You will need to setup at least:
    - DJANGO_READ_DOT_ENV_FILE
    - DATABASE_URL
+   - CELERY_BROKER_URL
 
 4. Install required python dependencies. For Ubuntu/Debian you can do:
 
