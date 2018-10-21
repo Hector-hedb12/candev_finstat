@@ -13,18 +13,22 @@
 
   function drawBasic() {
       var data = new google.visualization.DataTable();
-      data.addColumn('number', 'X');
-      data.addColumn('number', 'Dogs');
+      data.addColumn('string', 'X');
+      data.addColumn('number', 'All fields');
+      data.addColumn('number', 'Food');
+      data.addColumn('number', 'Shelter');
+      data.addColumn('number', 'Transportation');
 
-      data.addRows({{ gdp_pairs }});
+      data.addRows({{ data | safe }});
 
       var options = {
-        hAxis: {
-          title: 'Time'
+        chart: {
+          title: 'Consumer Price Indexes',
+          subtitle: 'monthly, seasonally adjusted'
         },
-        vAxis: {
-          title: 'Popularity'
-        }
+        hAxis: {
+          title: 'Month'
+        },
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
